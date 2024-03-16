@@ -7,38 +7,29 @@ int main()
     cin.tie(NULL);
 
     string s;
-    getline(cin, s);
-
-    sort(s.begin(), s.end());
-    s.erase(unique(s.begin(), s.end()), s.end());
-
-    bool ans = false;
-    char ch = 'a';
-
-    for (int i = 0; i < s.size() - 1; i++)
+    cin >> s;
+    int fq_array[26] = {0};
+    for (char ch : s)
     {
-        if (s[i] + 1 == s[i + 1])
+        fq_array[ch - 'a']++;
+    }
+    char result = ' ';
+    for (int i = 0; i < 26; i++)
+    {
+        if (fq_array[i] == 0)
         {
-            continue;
-        }
-        else
-        {
-            ans = true;
-            ch = s[i] + 1;
+            result = 'a' + i;
             break;
         }
     }
-    // cout << ch << endl;
 
-    if (ans)
+    if (result != ' ')
     {
-        cout << ch << '\n';
+        cout << result << '\n';
     }
     else
     {
         cout << "None" << '\n';
     }
-
-    // cout << s << endl;
     return 0;
 }
