@@ -1,26 +1,24 @@
 #include <bits/stdc++.h>
-#define ll long long
 using namespace std;
 
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+
     int t;
     cin >> t;
+
     while (t--)
     {
         int n;
-        string s;
-        char ch;
-        cin >> n >> ch;
-        cin >> s;
+        string s, s1;
+        cin >> n >> s >> s1;
 
-        s += s;
-
-        // rggryrggry
+        s1 += s1;
 
         bool flag = false;
+
         int res = 0, cnt = 0;
 
         if (s[0] == 'g')
@@ -29,27 +27,25 @@ int main()
             continue;
         }
 
-        for (int i = 0; i < s.size(); i++)
+        for (int i = 0; i < s1.size(); i++)
         {
-            if (s[i] == 'g')
+            if (s1[i] == 'g')
             {
                 res = max(res, cnt);
                 flag = false;
             }
 
-            if (s[i] == ch && !flag)
+            if (s1[i] == s[0] and flag == false)
             {
                 flag = true;
                 cnt = 0;
             }
 
             if (flag)
-            {
                 cnt++;
-            }
         }
+
         cout << res << endl;
     }
-
     return 0;
 }
