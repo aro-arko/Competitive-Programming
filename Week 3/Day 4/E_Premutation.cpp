@@ -13,7 +13,7 @@ int main()
         int n;
         cin >> n;
         vector<int> pos[n + 1];
-        int ans[n + 1];
+
         int m = n;
         while (m--)
         {
@@ -24,11 +24,13 @@ int main()
                 pos[x].push_back(i);
             }
         }
+
         for (int i = 1; i <= n; i++)
         {
             sort(pos[i].begin(), pos[i].end());
         }
 
+        int ans[n + 1];
         for (int i = 1; i <= n; i++)
         {
             if (pos[i][n - 2] == n - 1)
@@ -47,11 +49,12 @@ int main()
                 ans[pos[i][n - 2]] = i;
             }
         }
+
         for (int i = 1; i <= n; i++)
         {
             cout << ans[i] << " ";
         }
-        cout << "\n";
+        cout << '\n';
     }
     return 0;
 }
