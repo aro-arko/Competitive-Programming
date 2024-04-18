@@ -15,7 +15,6 @@ void solve(int n)
     int ans = 1;
     for (int i = cnt - 1; i >= 0; i--)
     {
-        /* code */
         if (n & (1 << i))
         {
 
@@ -35,7 +34,6 @@ int main()
     cin >> t;
     while (t--)
     {
-        /* code */
         int n;
         cin >> n;
         solve(n);
